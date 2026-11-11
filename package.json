@@ -1,0 +1,17 @@
+{
+  "name": "innovations-boys",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "api"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=@innovations-boys/web",
+    "dev:api": "npm run start:dev --workspace=api"
+  },
+  "dependencies": {
+    "lucide-react": "^1.70.0"
+  }
+}
