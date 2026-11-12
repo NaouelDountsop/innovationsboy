@@ -74,9 +74,7 @@ export function Navbar({
 
           <div className="ml-4 hidden items-center gap-2 lg:flex">
             <a
-              href="https://wa.me/237680571917"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact-form"
               aria-label="WhatsApp"
               className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-[#25D366] transition hover:bg-[#25D366]/10 dark:bg-slate-800 dark:hover:bg-[#25D366]/20"
             >

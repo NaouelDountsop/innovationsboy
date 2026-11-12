@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import { AboutSection } from './components/AboutSection'
+import { ContactSection } from './components/ContactSection'
 import { Hero } from './components/Hero'
 import { Navbar } from './components/Navbar'
 import { ServicesSection } from './components/ServicesSection'
+import { SiteFooter } from './components/SiteFooter'
 import { StudioSection } from './components/StudioSection'
-import { WhatsAppIcon, YouTubeIcon } from './components/BrandIcons'
 import { useTheme } from './hooks/useTheme'
 import type { Language } from './i18n/translations'
 import { translations } from './i18n/translations'
@@ -58,7 +59,7 @@ function App() {
 
         <section
           id="projects"
-          className="bg-white px-5 py-14 text-[#1E5AA2] transition-colors dark:bg-slate-950 dark:text-slate-100 sm:px-8 lg:px-[26px]"
+          className="bg-white px-5 py-14 text-[#1E5AA2] transition-colors dark:bg-slate-950 dark:text-slate-100 sm:px-8 lg:px-6.5"
         >
           <style>{projectGalleryScroll}</style>
 
@@ -83,26 +84,36 @@ function App() {
               </p>
             </div>
 
-            <div className="mt-10 overflow-hidden rounded-[30px] border border-[#EAF0FF] bg-[#F8FAFF] p-3 shadow-[0_20px_50px_rgba(30,90,162,0.08)] dark:border-slate-800 dark:bg-slate-900 dark:shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
+            <div className="relative mt-10 overflow-hidden rounded-3xl border border-[#EAF0FF] bg-[#F8FAFF] p-3 shadow-[0_20px_50px_rgba(30,90,162,0.08)] dark:border-slate-800 dark:bg-slate-900 dark:shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
               <div
                 className="flex w-max gap-4"
-                style={{ animation: 'projectScroll 24s linear infinite' }}
+                style={{ animation: 'projectScroll 48s linear infinite' }}
               >
                 {[...projectGallery, ...projectGallery].map((image, index) => (
                   <button
                     key={`project-${index}`}
                     type="button"
                     onClick={() => setSelectedProjectImage(image)}
-                    className="block overflow-hidden rounded-[24px] border border-[#E4EAF8] bg-white shadow-sm transition hover:scale-[1.01] focus:outline-none dark:border-slate-800 dark:bg-slate-800"
+                    className="block overflow-hidden rounded-3xl border border-[#E4EAF8] bg-white shadow-sm transition hover:scale-[1.01] focus:outline-none dark:border-slate-800 dark:bg-slate-800"
                     aria-label={t.projects.expandImage}
                   >
                     <img
                       src={image}
                       alt={`${t.projects.imageAlt} ${index + 1}`}
-                      className="h-[220px] w-[300px] object-cover sm:h-[300px] sm:w-[420px] lg:h-[420px] lg:w-[620px]"
+                      draggable={false}
+                      className="h-55 w-75 object-cover sm:h-75 sm:w-105 lg:h-105 lg:w-155"
                     />
                   </button>
                 ))}
+              </div>
+              <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
+                <img
+                  src="/logo.jpeg"
+                  alt=""
+                  aria-hidden="true"
+                  draggable={false}
+                  className="h-56 w-56 rounded-full object-cover opacity-40 shadow-md sm:h-80 sm:w-80"
+                />
               </div>
             </div>
           </div>
@@ -110,11 +121,11 @@ function App() {
 
         {selectedProjectImage && (
           <div
-            className="fixed inset-0 z-[60] flex items-center justify-center bg-[#091A31]/80 p-4 backdrop-blur-sm"
+            className="fixed inset-0 z-60 flex items-center justify-center bg-[#091A31]/80 p-4 backdrop-blur-sm"
             onClick={() => setSelectedProjectImage(null)}
           >
             <div
-              className="relative max-h-[92vh] w-full max-w-[1100px] overflow-hidden rounded-[30px] border border-white/10 bg-[#F8FAFF] p-3 shadow-[0_30px_80px_rgba(0,0,0,0.35)] dark:bg-slate-900 sm:p-4"
+              className="relative max-h-[92vh] w-full max-w-275 overflow-hidden rounded-3xl border border-white/10 bg-[#F8FAFF] p-3 shadow-[0_30px_80px_rgba(0,0,0,0.35)] dark:bg-slate-900 sm:p-4"
               onClick={(event) => event.stopPropagation()}
             >
               <button
@@ -129,70 +140,27 @@ function App() {
               <img
                 src={selectedProjectImage}
                 alt={t.projects.largeImageAlt}
-                className="max-h-[84vh] w-full rounded-[20px] object-contain"
+                draggable={false}
+                className="max-h-[84vh] w-full rounded-2xl object-contain"
               />
+              <div className="pointer-events-none absolute inset-0 z-1 flex items-center justify-center">
+                <img
+                  src="/logo.jpeg"
+                  alt=""
+                  aria-hidden="true"
+                  draggable={false}
+                  className="h-96 w-96 rounded-full object-cover opacity-35 shadow-md sm:h-144 sm:w-144"
+                />
+              </div>
             </div>
           </div>
         )}
 
         <StudioSection lang={lang} />
 
-        <footer id="contact" className="bg-[#091a31] px-6 py-10 text-white sm:px-8 lg:px-[26px]">
-          <div className="mx-auto grid max-w-[1620px] gap-8 md:grid-cols-3 lg:grid-cols-4">
-            <div className="md:col-span-2 lg:col-span-1">
-              <div className="text-2xl font-black tracking-tight text-[#F6BA36]">Innovations Boys</div>
-              <p className="mt-4 max-w-xs text-sm leading-7 text-slate-300">
-                {t.footer.tagline}
-              </p>
-            </div>
+        <ContactSection lang={lang} />
 
-            <div>
-              <h4 className="text-sm font-bold uppercase tracking-[0.18em] text-[#F6BA36]">{t.footer.navigation}</h4>
-              <ul className="mt-4 space-y-3 text-sm text-slate-300">
-                <li><a href="#home" className="hover:text-white">{t.nav.home}</a></li>
-                <li><a href="#about" className="hover:text-white">{t.nav.about}</a></li>
-                <li><a href="#services" className="hover:text-white">{t.nav.services}</a></li>
-                <li><a href="#projects" className="hover:text-white">{t.nav.projects}</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-bold uppercase tracking-[0.18em] text-[#F6BA36]">{t.footer.contact}</h4>
-              <ul className="mt-4 space-y-3 text-sm text-slate-300">
-                <li>{t.footer.location}</li>
-                <li>{t.footer.domain}</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-bold uppercase tracking-[0.18em] text-[#F6BA36]">{t.footer.follow}</h4>
-              <ul className="mt-4 space-y-3 text-sm text-slate-300">
-                <li>
-                  <a href="https://www.youtube.com/@Ivan46" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-white">
-                    <YouTubeIcon className="h-4 w-4 text-[#FF0000]" />
-                    YouTube
-                  </a>
-                </li>
-                <li>
-                  <a href="https://wa.me/237680571917" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-white">
-                    <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
-                    WhatsApp
-                  </a>
-                </li>
-                <li>
-                  <a href="https://ecbpliux.mychariow.shop" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-white">
-                    <img src="/chariow.png" alt="" className="h-4 w-4 rounded-full bg-white object-cover" />
-                    Chariow
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="mx-auto mt-8 max-w-[1620px] border-t border-white/10 pt-5 text-center text-sm text-slate-400">
-            {t.footer.rights}
-          </div>
-        </footer>
+        <SiteFooter lang={lang} />
       </main>
     </div>
   )

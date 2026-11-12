@@ -102,7 +102,7 @@ export function ServicesSection({ lang }: ServicesSectionProps) {
   return (
     <section
       id="services"
-      className="relative overflow-hidden bg-[#FCFCFE] px-5 py-14 font-sans text-[#1E5AA2] transition-colors dark:bg-slate-950 dark:text-slate-100 sm:px-8 lg:px-[26px]"
+      className="relative overflow-hidden bg-[#FCFCFE] px-5 py-14 font-sans text-[#1E5AA2] transition-colors dark:bg-slate-950 dark:text-slate-100 sm:px-8 lg:px-6.5"
     >
       <div className="relative mx-auto max-w-[1620px]">
         <div className="max-w-3xl">
@@ -138,9 +138,9 @@ export function ServicesSection({ lang }: ServicesSectionProps) {
           {services.map((service) => (
             <article
               key={service.title}
-              className="overflow-hidden rounded-[32px] border border-[#E4EAF8] bg-white shadow-[0_8px_30px_rgba(10,31,68,0.08)] transition-colors dark:border-slate-800 dark:bg-slate-900 dark:shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
+              className="overflow-hidden rounded-4xl border border-[#E4EAF8] bg-white shadow-[0_8px_30px_rgba(10,31,68,0.08)] transition-colors dark:border-slate-800 dark:bg-slate-900 dark:shadow-[0_8px_30px_rgba(0,0,0,0.35)]"
             >
-              <div className="relative h-[230px] bg-slate-200">
+              <div className="relative h-57.5 bg-slate-200">
                 <img
                   src={service.image}
                   alt={service.title}
@@ -165,7 +165,7 @@ export function ServicesSection({ lang }: ServicesSectionProps) {
                   />
                 </svg>
 
-                <div className="absolute -bottom-6 left-9 z-10 flex h-[84px] w-[84px] items-center justify-center rounded-[22px] bg-[#1E5AA2] shadow-lg">
+                <div className="absolute -bottom-6 left-9 z-10 flex h-21 w-21 items-center justify-center rounded-2xl bg-[#1E5AA2] shadow-lg">
                   {service.icon}
                 </div>
               </div>
@@ -174,7 +174,7 @@ export function ServicesSection({ lang }: ServicesSectionProps) {
                 <h3 className="text-[28px] font-extrabold tracking-tight">
                   {service.title}
                 </h3>
-                <p className="mt-3 max-w-[380px] text-[18px] leading-[28px] text-[#2B3A63] dark:text-slate-300">
+                <p className="mt-3 max-w-95 text-[18px] leading-7 text-[#2B3A63] dark:text-slate-300">
                   {service.description}
                 </p>
 
@@ -184,7 +184,7 @@ export function ServicesSection({ lang }: ServicesSectionProps) {
                       key={item}
                       className="flex items-center gap-4 text-[18px] text-[#1D2952] dark:text-slate-200"
                     >
-                      <span className="flex h-[22px] w-[22px] shrink-0 items-center justify-center rounded-full bg-[#FFC226]">
+                      <span className="flex h-5.5 w-5.5 shrink-0 items-center justify-center rounded-full bg-[#FFC226]">
                         <Check
                           className="h-3.5 w-3.5 text-white"
                           strokeWidth={3.5}
@@ -232,7 +232,7 @@ export function ServicesSection({ lang }: ServicesSectionProps) {
             className={`flex w-full max-w-[98vw] max-h-[96vh] flex-col overflow-hidden rounded-[30px] border border-[#E4EAF8] bg-white shadow-[0_24px_80px_rgba(15,23,42,0.25)] dark:border-slate-800 dark:bg-slate-900 ${
               isDigitalService(selectedService)
                 ? 'p-3 sm:p-4 lg:h-[94vh] lg:max-w-[1600px]'
-                : 'p-4 sm:p-6 lg:max-w-[1200px]'
+                : 'p-4 sm:p-6 lg:max-w-300'
             }`}
             onClick={(event) => event.stopPropagation()}
           >
@@ -406,14 +406,24 @@ export function ServicesSection({ lang }: ServicesSectionProps) {
                         {galleryImages.map((image, index) => (
                           <div
                             key={`${image}-${index}`}
-                            className="w-full min-w-full flex-shrink-0 overflow-hidden rounded-[22px] border border-[#E4EAF8] bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900"
+                            className="w-full min-w-full shrink-0 overflow-hidden rounded-2xl border border-[#E4EAF8] bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900"
                           >
-                            <div className="flex h-[52vh] min-h-[300px] max-h-[72vh] items-center justify-center bg-[#F8FAFF] p-2 dark:bg-slate-900 sm:h-[60vh] sm:min-h-[380px] sm:p-3">
+                            <div className="relative flex h-[52vh] min-h-75 max-h-[72vh] items-center justify-center bg-[#F8FAFF] p-2 dark:bg-slate-900 sm:h-[60vh] sm:min-h-95 sm:p-3">
                               <img
                                 src={image}
                                 alt={`${selectedService} ${index + 1}`}
-                                className="h-full w-full rounded-[16px] object-contain"
+                                draggable={false}
+                                className="h-full w-full rounded-2xl object-contain"
                               />
+                              <div className="pointer-events-none absolute inset-0 z-1 flex items-center justify-center">
+                                <img
+                                  src="/logo.jpeg"
+                                  alt=""
+                                  aria-hidden="true"
+                                  draggable={false}
+                                  className="h-88 w-88 rounded-full object-cover opacity-35 shadow-md sm:h-128 sm:w-lg"
+                                />
+                              </div>
                             </div>
                           </div>
                         ))}

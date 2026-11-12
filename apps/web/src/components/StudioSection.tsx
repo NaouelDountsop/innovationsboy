@@ -8,7 +8,7 @@ function CheckList({ items }: { items: readonly string[] }) {
     <ul className="space-y-3">
       {items.map((item) => (
         <li key={item} className="flex items-center gap-3.5 text-[17px]">
-          <span className="flex h-[22px] w-[22px] shrink-0 items-center justify-center rounded-full bg-[#FFC226]">
+          <span className="flex h-5.5 w-5.5 shrink-0 items-center justify-center rounded-full bg-[#FFC226]">
             <Check className="h-3.5 w-3.5 text-white" strokeWidth={3.5} />
           </span>
           {item}
@@ -26,9 +26,9 @@ export function StudioSection({ lang }: { lang: Language }) {
       id="cameroun"
       className="relative overflow-hidden bg-[#FCFCFE] font-sans text-[#1E5AA2] transition-colors dark:bg-slate-950 dark:text-slate-100"
     >
-      <div className="relative mx-auto max-w-[1620px] px-5 pb-16 sm:px-8 lg:px-[26px]">
-        <div className="relative 2xl:min-h-[395px]">
-          <div className="pt-8 sm:pt-10 lg:max-w-[760px] 2xl:max-w-[720px] 2xl:pt-8">
+      <div className="relative mx-auto max-w-[1620px] px-5 pb-16 sm:px-8 lg:px-6.5">
+        <div className="relative 2xl:min-h-98.75">
+          <div className="pt-8 sm:pt-10 lg:max-w-190 2xl:max-w-180 2xl:pt-8">
             <div className="flex items-center gap-5">
               <span className="h-1 w-20 rounded-full bg-[#FFC226]" />
               <span className="text-lg font-semibold uppercase tracking-wide text-[#FFC226] sm:text-xl">
@@ -45,13 +45,13 @@ export function StudioSection({ lang }: { lang: Language }) {
               <span className="text-[#1E5AA2] dark:text-slate-100">{t.studio.titleLine3}</span>
             </h2>
 
-            <p className="mt-8 max-w-[680px] text-[18px] leading-[30px] text-[#2B3A63] dark:text-slate-300">
+            <p className="mt-8 max-w-170 text-[18px] leading-7.5 text-[#2B3A63] dark:text-slate-300">
               {t.studio.description}
             </p>
           </div>
 
           <div
-            className="relative mt-10 h-[200px] overflow-hidden rounded-bl-[120px] bg-[#0b1530] sm:h-[340px] 2xl:absolute 2xl:right-[-26px] 2xl:top-0 2xl:mt-0 2xl:h-[395px] 2xl:w-[50%]"
+            className="relative mt-10 h-50 overflow-hidden rounded-bl-[120px] bg-[#0b1530] sm:h-85 2xl:absolute 2xl:-right-6.5 2xl:top-0 2xl:mt-0 2xl:h-98.75 2xl:w-[50%]"
             style={{ clipPath: 'polygon(7% 0, 100% 0, 100% 100%, 0 100%)' }}
           >
             <div className="origin-top-left scale-[.5] sm:scale-[.85] 2xl:scale-100">
@@ -60,16 +60,16 @@ export function StudioSection({ lang }: { lang: Language }) {
           </div>
         </div>
 
-        <div className="mt-10 grid gap-8 2xl:grid-cols-2 2xl:gap-[28px]">
+        <div className="mt-10 grid gap-8 2xl:grid-cols-2 2xl:gap-7">
           <article className="relative overflow-hidden rounded-[28px] bg-[radial-gradient(circle_at_78%_12%,rgba(255,40,40,0.5),transparent_34%),radial-gradient(circle_at_62%_4%,rgba(255,90,40,0.35),transparent_30%),linear-gradient(135deg,#1a0505,#3a0808_50%,#5c0d0d)] text-white shadow-[0_20px_50px_rgba(120,0,0,0.35)]">
             <div className="absolute inset-0 bg-linear-to-r from-[#1a0505]/95 via-[#1a0505]/85 to-[#1a0505]/55" />
             <div className="pointer-events-none absolute -right-12 -top-12 h-52 w-52 rounded-full bg-[#FF0000]/40 blur-3xl" />
             <div className="pointer-events-none absolute -bottom-16 -left-16 h-52 w-52 rounded-full bg-[#FFC226]/10 blur-3xl" />
 
-            <div className="relative p-8 sm:p-[33px] 2xl:min-h-[527px]">
-              <div className="max-w-[420px] 2xl:max-w-[380px]">
+            <div className="relative p-8 sm:p-8.25 2xl:min-h-131.75">
+              <div className="max-w-105 2xl:max-w-95">
                 <div className="flex items-center gap-4">
-                  <span className="flex h-[52px] w-[70px] items-center justify-center rounded-xl bg-[#FF0000] shadow-[0_10px_28px_rgba(255,0,0,0.45)]">
+                  <span className="flex h-13 w-17.5 items-center justify-center rounded-xl bg-[#FF0000] shadow-[0_10px_28px_rgba(255,0,0,0.45)]">
                     <Play className="h-6 w-6 fill-white text-white" />
                   </span>
                   <div className="leading-tight">
@@ -113,7 +113,7 @@ export function StudioSection({ lang }: { lang: Language }) {
                   </span>
                 </div>
 
-                <p className="mt-6 text-[17px] leading-[24px] text-white/90">
+                <p className="mt-6 text-[17px] leading-6 text-white/90">
                   {t.studio.youtube.text}
                 </p>
 
@@ -125,9 +125,9 @@ export function StudioSection({ lang }: { lang: Language }) {
                   href="https://www.youtube.com/@Ivan46"
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-9 inline-flex h-[62px] items-center gap-4 rounded-full bg-[#FFC226] pl-[22px] pr-8 text-[18px] font-bold text-[#3a0808] shadow-[0_14px_34px_rgba(255,194,38,0.3)] transition hover:-translate-y-0.5 hover:brightness-105"
+                  className="mt-9 inline-flex h-15.5 items-center gap-4 rounded-full bg-[#FFC226] pl-5.5 pr-8 text-[18px] font-bold text-[#3a0808] shadow-[0_14px_34px_rgba(255,194,38,0.3)] transition hover:-translate-y-0.5 hover:brightness-105"
                 >
-                  <span className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-[#3a0808]">
+                  <span className="flex h-8.5 w-8.5 items-center justify-center rounded-full bg-[#3a0808]">
                     <Play className="h-4 w-4 fill-[#FFC226] text-[#FFC226]" />
                   </span>
                   {t.studio.youtube.cta}
@@ -135,7 +135,7 @@ export function StudioSection({ lang }: { lang: Language }) {
                 </a>
               </div>
 
-              <div className="mt-8 flex justify-center 2xl:absolute 2xl:bottom-[-70px] 2xl:right-[28px] 2xl:mt-0">
+              <div className="mt-8 flex justify-center 2xl:absolute 2xl:-bottom-17.5 2xl:right-7 2xl:mt-0">
                 <a
                   href="https://www.youtube.com/@Ivan46"
                   target="_blank"
@@ -149,10 +149,10 @@ export function StudioSection({ lang }: { lang: Language }) {
           </article>
 
           <article className="relative overflow-hidden rounded-[28px] border border-[#E9EDF7] bg-linear-to-br from-white via-white to-[#F3F5FA] shadow-[0_20px_50px_rgba(10,31,68,0.10)] transition-colors dark:border-slate-800 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 dark:shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
-            <div className="relative p-8 sm:p-[26px] sm:pl-[27px] 2xl:min-h-[527px]">
-              <div className="max-w-[330px]">
+            <div className="relative p-8 sm:p-6.5 sm:pl-6.75 2xl:min-h-131.75">
+              <div className="max-w-82.5">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-[56px] w-[56px] items-center justify-center overflow-hidden rounded-xl bg-white ring-1 ring-[#E9EDF7] shadow-sm dark:bg-slate-800 dark:ring-slate-700">
+                  <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-xl bg-white ring-1 ring-[#E9EDF7] shadow-sm dark:bg-slate-800 dark:ring-slate-700">
                     <img
                       src="/chariow.png"
                       alt="Logo Chariow"
@@ -168,12 +168,12 @@ export function StudioSection({ lang }: { lang: Language }) {
                   {t.studio.shop.title}
                 </h3>
 
-                <p className="mt-4 text-[19px] font-bold leading-[26px]">
+                <p className="mt-4 text-[19px] font-bold leading-6.5">
                   {t.studio.shop.subtitle}
                 </p>
-                <div className="mt-3 h-[3px] w-[44px] rounded-full bg-[#FFC226]" />
+                <div className="mt-3 h-0.75 w-11 rounded-full bg-[#FFC226]" />
 
-                <p className="mt-6 text-[17px] leading-[24px] text-[#2B3A63] dark:text-slate-300">
+                <p className="mt-6 text-[17px] leading-6 text-[#2B3A63] dark:text-slate-300">
                   {t.studio.shop.description}
                 </p>
 
@@ -185,7 +185,7 @@ export function StudioSection({ lang }: { lang: Language }) {
                   href="https://ecbpliux.mychariow.shop/citool-cadimage-archicad-29-pack-dactivation"
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-8 inline-flex h-[52px] items-center gap-4 rounded-full bg-[#FFC226] px-[22px] text-[16px] font-bold text-[#1E5AA2] transition hover:brightness-95"
+                  className="mt-8 inline-flex h-13 items-center gap-4 rounded-full bg-[#FFC226] px-5.5 text-[16px] font-bold text-[#1E5AA2] transition hover:brightness-95"
                 >
                   <ShoppingCart className="h-5 w-5" />
                   {t.studio.shop.cta}
@@ -193,8 +193,8 @@ export function StudioSection({ lang }: { lang: Language }) {
                 </a>
               </div>
 
-              <div className="mt-8 flex justify-center 2xl:absolute 2xl:bottom-0 2xl:right-[-24px] 2xl:mt-0 2xl:flex 2xl:items-end 2xl:justify-end">
-                <div className="w-full max-w-[360px] overflow-hidden 2xl:w-[360px]">
+              <div className="mt-8 flex justify-center 2xl:absolute 2xl:bottom-0 2xl:-right-6 2xl:mt-0 2xl:flex 2xl:items-end 2xl:justify-end">
+                <div className="w-full max-w-90 overflow-hidden 2xl:w-90">
                   <a
                     href="https://ecbpliux.mychariow.shop/citool-cadimage-archicad-29-pack-dactivation"
                     target="_blank"
@@ -204,7 +204,7 @@ export function StudioSection({ lang }: { lang: Language }) {
                     <img
                       src="/charriot.png"
                       alt="Chariow"
-                      className="mx-auto h-[260px] w-auto object-contain drop-shadow-[0_20px_30px_rgba(13,32,67,0.18)] sm:h-[300px] 2xl:ml-auto 2xl:h-[390px]"
+                      className="mx-auto h-65 w-auto object-contain drop-shadow-[0_20px_30px_rgba(13,32,67,0.18)] sm:h-75 2xl:ml-auto 2xl:h-97.5"
                     />
                   </a>
                 </div>
